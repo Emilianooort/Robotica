@@ -1,0 +1,19 @@
+% Declaración de variables simbólicas
+syms x y z
+
+% Definición de la función F(x, y, z)
+F = [sin(5*x^3 + 3*y - 4*y*x*z^2);
+     -10*x^5 - 4*y*x*z + 15*x*z^4;
+     cos(-x*y*z^5 - 6*x*y^5*z - 7*y*x*z^2)];
+
+% Cálculo de la matriz Jacobiana
+J = jacobian(F, [x, y, z]);
+
+% Mostrar la matriz Jacobiana
+disp('Matriz Jacobiana:');
+pretty(J);
+
+% Evaluar la matriz Jacobiana en el punto (-5, -4, -1)
+J_eval = subs(J, {x, y, z}, {-5, -4, -1});
+disp('Matriz Jacobiana evaluada en (-5, -4, -1):');
+pretty(J_eval);
