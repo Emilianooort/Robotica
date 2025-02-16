@@ -23,13 +23,13 @@ pretty(Qp);
 GDL = size(RP, 1);
 
 % Vector de traslación de la articulación 1 respecto a 0
-P = zeros(3, 1, GDL); % Inicialización del arreglo multidimensional
+P = sym(zeros(3, 1, GDL)); % Inicialización del arreglo con variables simbólicas
 P(:, :, 1) = [l1 * cos(th1); 
               l1 * sin(th1);
               0];
 
 % Matriz de rotación de la junta 1 respecto a 0
-R = zeros(3, 3, GDL); % Inicialización del arreglo multidimensional
+R = sym(zeros(3, 3, GDL)); % Inicialización del arreglo con variables simbólicas
 R(:, :, 1) = [cos(th1) -sin(th1) 0;
               sin(th1)  cos(th1) 0;
               0         0        1];
